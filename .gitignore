@@ -21,4 +21,7 @@ var/
 *.egg
 
 # Serverless directories
-.serverless
+.serverlessp
+
+.vs
+.aws/config
