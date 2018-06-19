@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\interactions"
+    "\\razor_api"
   ],
-  "SelectedNode": "\\interactions\\prizes.py",
+  "SelectedNode": "\\razor_api\\interactions.py",
   "PreviewInSolutionExplorer": false
 }
