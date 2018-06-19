@@ -23,5 +23,5 @@ var/
 # Serverless directories
 .serverlessp
 
-.vs
+.vs/
 .aws/config
