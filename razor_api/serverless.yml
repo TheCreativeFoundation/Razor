@@ -1,0 +1,93 @@
+service: razor-api
+
+provider:
+  name: aws
+  runtime: python3.6
+  stage: prod
+  profile: razor-admin
+
+functions:
+  get_users:
+    handler: users.get_users
+    events:
+      - http:
+          path: users
+          method: get
+  put_users:
+    handler: users.put_users
+    events:
+      - http:
+          path: users
+          method: put
+  post_users:
+    handler: users.post_users
+	events:
+	  - http:
+	      path: users
+		  method: post
+  post_user_point:
+    handler: user.post_user_points
+    events:
+      -http:
+        path: users/points
+        method: post
+  put_transaction:
+    handler: transactions.put_transaction
+	events:
+	  - http:
+	    path: transactions
+		method: put
+  get_prizes:
+    handler: prizes.get_prizes
+	events:
+	  -http: 
+	    path: prizes
+		method: get
+  put_prizes:
+    handler: prizes.put_prizes
+	events:
+	  - http:
+	    path: prizes
+		method: put
+  post_prizes:
+    handler: prizes.post_prizes
+	events:
+	  - http:
+	    path: prizes
+		method: post
+  post_prizes_status:
+    handler: prizes.post_prizes_status
+	events:
+	  - http:
+	    path: prizes/status
+		method: post
+  get_challenges:
+    handler: challenges.get_challenges
+	events:
+	  - http:
+	    path: challenges
+		method: get
+  put_challenges:
+    handler: challenges.put_challenges
+	events:
+	  - http:
+	    path: challenges
+		method: put
+  post_challenges:
+    handler: challenges.post_challenges
+	events:
+	  - http:
+	    path: challenges
+		method: post
+  post_challenges_status:
+    handler: challeneges.post_challenges_status
+	events:
+	  - http:
+	    path: challenges/status
+		method: post
+  complete_challenge:
+    handler: interactions.complete_challenge
+	events:
+	  - http:
+	    path: interactions/completeChallenge
+		method: post

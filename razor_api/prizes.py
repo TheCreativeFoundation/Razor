@@ -52,7 +52,15 @@ def post_prizes_status(context, event):
     status_code = 505
     data = {"message":"An error occured"}
     try:
-        data = prizes_table.update_item()
+        data = prizes_table.update_item(
+            Key={
+                "prize_name" : event["prize_name"]
+            },
+            UpdateExpression="set status = :status",
+            ExpressionAttributeValues={ 
+                ":status": event["status"]
+                }
+            )
     except Exception as e:
        print(e)
     return {"code":status_code,"data":data}
