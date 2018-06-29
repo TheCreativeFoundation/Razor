@@ -1,3 +1,4 @@
+from __future__ import print_function
 import json
 import boto3
 import hashlib
@@ -14,7 +15,7 @@ def get_users(context, event):
             data = users_table.get_item(Key={"user_id": event["user_id"]})
             status_code = 202
         except Exception as e:
-            pass
+            print(e)
     else:
         # gets ALL the users
         # BATCH GET or something
@@ -63,4 +64,4 @@ def post_user_points(context, event):
             pass
     except Exception as e:
         pass
-    return json.dumps({"code": status_code, "data": data})
+    return {"code": status_code, "data": data}
